@@ -1,0 +1,22 @@
+{
+  "name": "benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/benchmark": "^2.1.5",
+    "@types/chalk": "^2.2.4",
+    "@types/chart.js": "^2.9.41",
+    "@types/node": "^22.10.1",
+    "benchmark": "^2.1.4",
+    "chalk": "^5.3.0",
+    "chart.js": "^4.4.7",
+    "radashi": "^12.3.0",
+    "ts-pattern": "^5.5.0"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bar Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1>Bar Chart: name and value</h1>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script>
+      // Chart.js를 사용한 막대 차트 그리기
+      const ctx = document.getElementById('myChart').getContext('2d');
+
+      // 데이터 (name: string, value: number)
+      const data = {{data}};
+
+      // 차트에 사용할 labels (name)
+      const labels = data.map((item) => `${item.name}(${item.value})`);
+
+      // 차트에 사용할 데이터 (value)
+      const values = data.map((item) => item.value);
+
+      // 차트 생성
+      const chart = new Chart(ctx, {
+        type: 'bar', // 막대 차트
+        data: {
+          labels: labels, // x축 레이블
+          datasets: [
+            {
+              label: 'Values', // 데이터셋 이름
+              data: values, // 데이터 값
+              backgroundColor: 'rgba(75, 192, 192, 0.2)', // 막대 색상
+              borderColor: 'rgba(75, 192, 192, 1)', // 막대 경계 색상
+              borderWidth: 1, // 경계 두께
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true, // y축 0부터 시작
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
